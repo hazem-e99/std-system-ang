@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>الامتحانات المتاحة</h2>
+  <a class="btn btn-outline-secondary" routerLink="/student/results">عرض النتائج</a>
+</div>
+
+<div class="container mt-4">
+  <h2 class="mb-4">الامتحانات المتاحة</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4" *ngFor="let exam of exams">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ exam.title }}</h5>
+          <p class="card-text">{{ exam.description }}</p>
+          <button class="btn btn-primary" (click)="startExam(exam.id)">ابدأ الامتحان</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

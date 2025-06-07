@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <h3 class="mb-4">📊 نتائج الطلاب</h3>
+
+  <table class="table table-striped table-bordered" *ngIf="results.length > 0; else noResults">
+    <thead class="table-light">
+      <tr>
+        <th>#</th>
+        <th>اسم الطالب</th>
+        <th>عنوان الامتحان</th>
+        <th>النتيجة</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ result.studentName }}</td>
+        <td>{{ result.examTitle }}</td>
+        <td>{{ result.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noResults>
+    <p class="text-muted">لا توجد نتائج بعد.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="mb-4 text-center">تسجيل الدخول</h2>
+
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="mb-3">
+          <label class="form-label">البريد الإلكتروني</label>
+          <input type="email" class="form-control" formControlName="email" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">كلمة المرور</label>
+          <input type="password" class="form-control" formControlName="password" />
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+
+        <button class="btn btn-success w-100" type="submit" [disabled]="form.invalid">
+          دخول
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

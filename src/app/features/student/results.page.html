@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h3 class="mb-4">نتائج الامتحانات</h3>
+
+  <div *ngIf="results.length === 0">
+    <p class="text-muted">لا توجد نتائج بعد.</p>
+  </div>
+
+  <table *ngIf="results.length > 0" class="table table-bordered table-striped">
+    <thead class="table-light">
+      <tr>
+        <th>الامتحان</th>
+        <th>درجتك</th>
+        <th>من</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.examTitle }}</td>
+        <td>{{ result.score }}</td>
+        <td>{{ result.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

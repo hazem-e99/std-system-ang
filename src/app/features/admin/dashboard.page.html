@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h2 class="mb-4">لوحة تحكم الأدمن</h2>
+
+  <div class="list-group">
+    <a routerLink="/admin/exams" class="list-group-item list-group-item-action">
+      إدارة الامتحانات
+    </a>
+
+    <a routerLink="/admin/questions" class="list-group-item list-group-item-action">
+      إدارة الأسئلة
+    </a>
+
+    <a routerLink="/admin/results" class="list-group-item list-group-item-action">
+      عرض نتائج الطلاب
+    </a>
+
+    <button (click)="logout()" class="list-group-item list-group-item-action text-danger">
+      تسجيل الخروج
+    </button>
+  </div>
+</div>

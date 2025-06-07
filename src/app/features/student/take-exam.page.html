@@ -1,0 +1,22 @@
+<div class="container mt-4" *ngIf="questions.length > 0">
+  <h3 class="mb-4">الأسئلة</h3>
+  <form [formGroup]="form" (ngSubmit)="submitExam()">
+    <div *ngFor="let q of questions" class="mb-4">
+      <h5>{{ q.text }}</h5>
+      <div *ngFor="let opt of q.options" class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          [value]="opt"
+          [formControlName]="q.id"
+          [id]="'q' + q.id + '_' + opt"
+        />
+        <label class="form-check-label" [for]="'q' + q.id + '_' + opt">
+          {{ opt }}
+        </label>
+      </div>
+    </div>
+
+    <button class="btn btn-success w-100" type="submit">إنهاء الامتحان</button>
+  </form>
+</div>
