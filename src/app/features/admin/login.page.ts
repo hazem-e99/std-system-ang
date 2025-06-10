@@ -11,7 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   templateUrl: './login.page.html',
 })
 export class AdminLoginPage {
-  form: any; // سيتم تهيئتها في الكونستركتور
+  form: any; // Will be initialized in constructor
 
   constructor(
     private fb: FormBuilder,
@@ -33,7 +33,7 @@ export class AdminLoginPage {
           localStorage.setItem('currentUser', JSON.stringify(res[0]));
           this.router.navigate(['/admin']);
         } else {
-          alert('بيانات الدخول غير صحيحة');
+          alert('Invalid login credentials');
         }
       });
   }

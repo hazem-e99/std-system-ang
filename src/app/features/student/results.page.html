@@ -1,24 +1,115 @@
-<div class="container mt-4">
-  <h3 class="mb-4">نتائج الامتحانات</h3>
+<!-- Page Header -->
+<div class="page-header">
+  <div class="header-content">
+    <div>
+      <h1>Exam Results</h1>
+      <p class="text-muted">View your exam performance and progress</p>
+    </div>
+    <button class="delete-all-btn" (click)="confirmDeleteAll()" *ngIf="submissions.length > 0">
+      <i class="fas fa-trash"></i>
+      Delete All Results
+    </button>
+  </div>
+</div>
 
-  <div *ngIf="results.length === 0">
-    <p class="text-muted">لا توجد نتائج بعد.</p>
+<!-- Loading State -->
+<div class="loading" *ngIf="isLoading">
+  <div class="loading-content">
+    <i class="fas fa-spinner fa-spin"></i>
+    <h2>Loading Results</h2>
+    <p class="loading-subtext">Please wait...</p>
+  </div>
+</div>
+
+<!-- Error State -->
+<div class="error-state" *ngIf="error">
+  <div class="error-content">
+    <i class="fas fa-exclamation-circle"></i>
+    <h2>Error</h2>
+    <p>{{ error }}</p>
+    <button class="retry-btn" (click)="loadSubmissions()">
+      <i class="fas fa-redo"></i>
+      Retry
+    </button>
+  </div>
+</div>
+
+<!-- Results Content -->
+<ng-container *ngIf="!isLoading && !error">
+  <!-- Statistics Cards -->
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <div class="stat-info">
+        <h3>{{ averageScore }}%</h3>
+        <p>Average Score</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-trophy"></i>
+      </div>
+      <div class="stat-info">
+        <h3>{{ highestScore }}%</h3>
+        <p>Highest Score</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-file-alt"></i>
+      </div>
+      <div class="stat-info">
+        <h3>{{ totalExams }}</h3>
+        <p>Exams Taken</p>
+      </div>
+    </div>
   </div>
 
-  <table *ngIf="results.length > 0" class="table table-bordered table-striped">
-    <thead class="table-light">
+  <!-- Results Table -->
+  <div class="results-table" *ngIf="submissions.length > 0">
+    <table>
+      <thead>
       <tr>
-        <th>الامتحان</th>
-        <th>درجتك</th>
-        <th>من</th>
+        <th>Exam</th>
+          <th>Score</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Time Taken</th>
+          <th>Details</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let result of results">
-        <td>{{ result.examTitle }}</td>
-        <td>{{ result.score }}</td>
-        <td>{{ result.total }}</td>
+        <tr *ngFor="let submission of submissions">
+          <td>{{ submission.examTitle }}</td>
+          <td>{{ submission.score }}%</td>
+          <td>
+            <span class="status-badge" [class]="getStatusClass(submission)">
+              {{ getStatusText(submission) }}
+            </span>
+          </td>
+          <td>{{ submission.submittedAt | date:'medium' }}</td>
+          <td>{{ submission.timeTaken }} minutes</td>
+          <td>
+            <a [routerLink]="['/student/exams', submission.examId, 'result']" class="view-details-btn">
+              <i class="fas fa-eye"></i>
+              View Details
+            </a>
+          </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+  <!-- No Results -->
+  <div class="no-results" *ngIf="submissions.length === 0">
+    <i class="fas fa-clipboard-list"></i>
+    <h3>No Results Yet</h3>
+    <p>Take your first exam to see your results here</p>
+    <a routerLink="/student/exams" class="start-exam-btn">
+      <i class="fas fa-play"></i>
+      Start an Exam
+    </a>
+  </div>
+</ng-container>

@@ -10,9 +10,12 @@ import { AdminExamsPage } from './features/admin/exams.page';
 import { ExamsAddPage } from './features/admin/exams-add.page';
 import { ExamsEditPage } from './features/admin/exams-edit.page';
 import { AdminQuestionsPage } from './features/admin/questions.page';
-import { QuestionAddPage } from './features/admin/question-add.page';
+import { AdminQuestionAddPage } from './features/admin/question-add.page';
 import { QuestionEditPage } from './features/admin/question-edit.page';
 import { AdminResultsPage } from './features/admin/results.page';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AdminLayoutComponent } from './features/admin/layout/layout.component';
+import { StudentLayoutComponent } from './features/student/layout/layout.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -20,17 +23,18 @@ export const routes: Routes = [
   { path: 'register', component: RegisterPage },
   {
     path: 'student',
+    component: StudentLayoutComponent,
     children: [
       { path: '', redirectTo: 'exams', pathMatch: 'full' },
       { path: 'exams', component: ExamsPage },
-          { path: 'exam/:id', component: TakeExamPage },
-              { path: 'results', component: AdminResultsPage }
-
-
+      { path: 'exams/:examId', component: TakeExamPage },
+      { path: 'results', component: ResultsPage },
+      { path: 'exams/:examId/result', loadComponent: () => import('./features/student/exam-result.page').then(m => m.ExamResultPage) }
     ]
   },
 {
   path: 'admin',
+    component: AdminLayoutComponent,
   children: [
     { path: '', component: AdminDashboardPage },
     { path: 'login', component: AdminLoginPage },
@@ -38,17 +42,10 @@ export const routes: Routes = [
             { path: 'exams/add', component: ExamsAddPage },
                 { path: 'exams/edit/:id', component: ExamsEditPage },
                     { path: 'questions', component: AdminQuestionsPage },
-                        { path: 'questions/add', component: QuestionAddPage },
+                        { path: 'questions/add', component: AdminQuestionAddPage },
                             { path: 'questions/edit', component: QuestionEditPage },
-                                { path: 'results', component: ResultsPage },
-
-
- // <== هنا
-
-
-
-
-    // باقي الصفحات سنضيفها لاحقًا: exams, questions, results
-  ]
-}
+      { path: 'results', component: AdminResultsPage }
+    ]
+  },
+  { path: '**', component: NotFoundComponent }
 ];

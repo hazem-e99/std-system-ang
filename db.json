@@ -1,81 +1,518 @@
 {
   "users": [
     {
-      "id": "31d5",
-      "username": "hazem",
-      "email": "zoka.live2000@gmail.com",
-      "password": "112233",
-      "role": "student"
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Admin User"
     },
     {
-      "id": 1,
-      "email": "admin@site.com",
-      "password": "admin123",
-      "role": "admin"
+      "id": "2",
+      "username": "student1",
+      "password": "student123",
+      "role": "student",
+      "name": "John Smith"
+    },
+    {
+      "id": "3",
+      "username": "student2",
+      "password": "student123",
+      "role": "student",
+      "name": "Emma Wilson"
+    },
+    {
+      "id": "4",
+      "username": "student3",
+      "password": "student123",
+      "role": "student",
+      "name": "Michael Brown"
+    },
+    {
+      "id": "5",
+      "username": "student4",
+      "password": "student123",
+      "role": "student",
+      "name": "Sarah Davis"
     }
   ],
   "exams": [
     {
-      "title": "امتحان رياضيات شامل كامل",
-      "description": "اختبار شامل على الجبر والهندسة.",
-      "id": "1"
+      "id": "1",
+      "title": "Web Development Fundamentals",
+      "description": "Test your knowledge of HTML, CSS, and JavaScript basics",
+      "startTime": "2024-03-20T09:00:00.000Z",
+      "duration": 60,
+      "endTime": "2024-03-20T10:00:00.000Z",
+      "totalMarks": 100,
+      "passingMarks": 60,
+      "createdAt": "2024-03-15T10:00:00.000Z"
     },
     {
       "id": "2",
-      "title": "امتحان علوم",
-      "description": "أسئلة متنوعة في الفيزياء والكيمياء."
+      "title": "Advanced JavaScript",
+      "description": "Deep dive into JavaScript concepts including ES6+, async programming, and design patterns",
+      "startTime": "2024-03-21T10:00:00.000Z",
+      "duration": 90,
+      "endTime": "2024-03-21T11:30:00.000Z",
+      "totalMarks": 100,
+      "passingMarks": 60,
+      "createdAt": "2024-03-15T11:00:00.000Z"
     },
     {
-      "id": "80b8",
-      "title": "امتحان الجبر",
-      "description": "امتحان شامل"
+      "id": "3",
+      "title": "Database Management",
+      "description": "Comprehensive test on SQL, database design, and data modeling",
+      "startTime": "2024-03-22T13:00:00.000Z",
+      "duration": 90,
+      "endTime": "2024-03-22T14:30:00.000Z",
+      "totalMarks": 100,
+      "passingMarks": 60,
+      "createdAt": "2024-03-15T12:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Angular Framework",
+      "description": "Test your knowledge of Angular components, services, and routing",
+      "startTime": "2024-03-23T09:00:00.000Z",
+      "duration": 120,
+      "endTime": "2024-03-23T11:00:00.000Z",
+      "totalMarks": 100,
+      "passingMarks": 60,
+      "createdAt": "2024-03-15T13:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "title": "System Design",
+      "description": "Test your understanding of software architecture and system design principles",
+      "startTime": "2024-03-24T14:00:00.000Z",
+      "duration": 120,
+      "endTime": "2024-03-24T16:00:00.000Z",
+      "totalMarks": 100,
+      "passingMarks": 60,
+      "createdAt": "2024-03-15T14:00:00.000Z"
     }
   ],
   "questions": [
     {
-      "examId": 1,
-      "text": "ما حاصل ضرب 2 × 4؟",
+      "id": "1",
+      "examId": "1",
+      "text": "What does HTML stand for?",
       "options": [
-        "4",
-        "12",
-        "8",
-        "6"
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Hyper Transfer Markup Language",
+        "Hyper Text Modern Language"
       ],
-      "correctAnswer": "12",
-      "id": "1"
+      "correctOption": 0,
+      "marks": 5
     },
     {
       "id": "2",
-      "examId": 1,
-      "text": "ما ناتج 10 ÷ 2؟",
+      "examId": "1",
+      "text": "Which CSS property is used to change the text color?",
       "options": [
-        "4",
-        "5",
-        "6",
-        "8"
+        "text-color",
+        "font-color",
+        "color",
+        "text-style"
       ],
-      "answer": "5"
+      "correctOption": 2,
+      "marks": 5
     },
     {
       "id": "3",
-      "examId": 2,
-      "text": "ما وحدة قياس المقاومة الكهربائية؟",
+      "examId": "1",
+      "text": "Which of the following is a JavaScript framework?",
       "options": [
-        "أوم",
-        "فولت",
-        "أمبير",
-        "واط"
+        "Django",
+        "Flask",
+        "React",
+        "Laravel"
       ],
-      "answer": "أوم"
+      "correctOption": 2,
+      "marks": 5
+    },
+    {
+      "id": "4",
+      "examId": "2",
+      "text": "What is the output of console.log(typeof [])?",
+      "options": [
+        "array",
+        "object",
+        "list",
+        "undefined"
+      ],
+      "correctOption": 1,
+      "marks": 5
+    },
+    {
+      "id": "5",
+      "examId": "2",
+      "text": "Which method is used to add an element to the end of an array?",
+      "options": [
+        "push()",
+        "append()",
+        "add()",
+        "insert()"
+      ],
+      "correctOption": 0,
+      "marks": 5
+    },
+    {
+      "id": "6",
+      "examId": "2",
+      "text": "What is a Promise in JavaScript?",
+      "options": [
+        "A function that returns a value",
+        "An object representing the eventual completion of an asynchronous operation",
+        "A way to declare variables",
+        "A type of loop"
+      ],
+      "correctOption": 1,
+      "marks": 5
+    },
+    {
+      "id": "7",
+      "examId": "3",
+      "text": "What is the primary key in a database?",
+      "options": [
+        "A key that can be null",
+        "A key that uniquely identifies each record",
+        "A key that references another table",
+        "A key that is automatically generated"
+      ],
+      "correctOption": 1,
+      "marks": 5
+    },
+    {
+      "id": "8",
+      "examId": "3",
+      "text": "Which SQL command is used to insert data?",
+      "options": [
+        "SELECT",
+        "UPDATE",
+        "INSERT",
+        "DELETE"
+      ],
+      "correctOption": 2,
+      "marks": 5
+    },
+    {
+      "id": "9",
+      "examId": "3",
+      "text": "What is normalization in database design?",
+      "options": [
+        "A process of organizing data to minimize redundancy",
+        "A way to increase database size",
+        "A method to delete data",
+        "A technique to backup data"
+      ],
+      "correctOption": 0,
+      "marks": 5
+    },
+    {
+      "id": "10",
+      "examId": "4",
+      "text": "What is a component in Angular?",
+      "options": [
+        "A database table",
+        "A reusable piece of code that controls a part of the UI",
+        "A type of variable",
+        "A CSS style"
+      ],
+      "correctOption": 1,
+      "marks": 5
+    },
+    {
+      "id": "11",
+      "examId": "4",
+      "text": "Which decorator is used to create a service in Angular?",
+        "options": [
+        "@Component",
+        "@Service",
+        "@Injectable",
+        "@Module"
+        ],
+      "correctOption": 2,
+      "marks": 5
+    },
+    {
+      "id": "12",
+      "examId": "4",
+      "text": "What is dependency injection in Angular?",
+      "options": [
+        "A way to create new components",
+        "A design pattern where a class receives its dependencies from external sources",
+        "A method to handle HTTP requests",
+        "A way to style components"
+      ],
+      "correctOption": 1,
+      "marks": 5
+    },
+    {
+      "id": "13",
+      "examId": "5",
+      "text": "What is the purpose of a load balancer?",
+        "options": [
+        "To store data",
+        "To distribute network traffic across multiple servers",
+        "To create backups",
+        "To monitor system performance"
+        ],
+      "correctOption": 1,
+      "marks": 5
+    },
+    {
+      "id": "14",
+      "examId": "5",
+      "text": "What is microservices architecture?",
+      "options": [
+        "A way to write code",
+        "An architectural style that structures an application as a collection of small services",
+        "A database design pattern",
+        "A type of UI framework"
+      ],
+      "correctOption": 1,
+      "marks": 5
+    },
+    {
+      "id": "15",
+      "examId": "5",
+      "text": "What is the CAP theorem?",
+      "options": [
+        "A theorem about computer architecture",
+        "A theorem stating that it's impossible for a distributed system to simultaneously provide consistency, availability, and partition tolerance",
+        "A theorem about network protocols",
+        "A theorem about database design"
+      ],
+      "correctOption": 1,
+      "marks": 5
+    }
+  ],
+  "exam_submissions": [
+    {
+      "id": "5745",
+      "examId": "2",
+      "userId": "2",
+      "answers": [
+        {
+          "questionId": "3",
+          "selectedAnswer": 3
+        },
+        {
+          "questionId": "4",
+          "selectedAnswer": 3
+        }
+      ],
+      "timeTaken": 2,
+      "submittedAt": "2025-06-07T21:53:16.115Z"
+    },
+    {
+      "id": "48f9",
+      "examId": "1",
+      "userId": "2",
+      "answers": [
+        {
+          "questionId": "1",
+          "selectedAnswer": 1
+        },
+        {
+          "questionId": "2",
+          "selectedAnswer": 1
+        }
+      ],
+      "timeTaken": 11,
+      "submittedAt": "2025-06-08T08:22:13.197Z"
+    },
+    {
+      "id": "0692",
+      "examId": "3",
+      "userId": "2",
+      "answers": [
+        {
+          "questionId": "5",
+          "selectedAnswer": 2
+        },
+        {
+          "questionId": "6",
+          "selectedAnswer": 2
+        }
+      ],
+      "timeTaken": 47,
+      "submittedAt": "2025-06-08T09:09:51.666Z"
     }
   ],
   "results": [
-{
-  "id": 1,
-  "studentName": "Ahmed",
-  "examTitle": "Math Final",
-  "score": 8
-}
-
+    {
+      "id": "1",
+      "examId": "1",
+      "userId": "2",
+      "studentName": "John Smith",
+      "examTitle": "Web Development Fundamentals",
+      "score": 85,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 2,
+      "wrongAnswers": 1,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 45,
+      "timestamp": "2024-03-20T09:45:00.000Z"
+    },
+    {
+      "id": "2",
+      "examId": "1",
+      "userId": "3",
+      "studentName": "Emma Wilson",
+      "examTitle": "Web Development Fundamentals",
+      "score": 100,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 3,
+      "wrongAnswers": 0,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 35,
+      "timestamp": "2024-03-20T09:35:00.000Z"
+    },
+    {
+      "id": "3",
+      "examId": "2",
+      "userId": "2",
+      "studentName": "John Smith",
+      "examTitle": "Advanced JavaScript",
+      "score": 66.67,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 2,
+      "wrongAnswers": 1,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 75,
+      "timestamp": "2024-03-21T11:15:00.000Z"
+    },
+    {
+      "id": "4",
+      "examId": "2",
+      "userId": "4",
+      "studentName": "Michael Brown",
+      "examTitle": "Advanced JavaScript",
+      "score": 33.33,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 1,
+      "wrongAnswers": 2,
+      "unansweredQuestions": 0,
+      "passed": false,
+      "passingMarks": 60,
+      "timeTaken": 85,
+      "timestamp": "2024-03-21T11:25:00.000Z"
+    },
+    {
+      "id": "5",
+      "examId": "3",
+      "userId": "3",
+      "studentName": "Emma Wilson",
+      "examTitle": "Database Management",
+      "score": 100,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 3,
+      "wrongAnswers": 0,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 60,
+      "timestamp": "2024-03-22T14:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "examId": "3",
+      "userId": "5",
+      "studentName": "Sarah Davis",
+      "examTitle": "Database Management",
+      "score": 66.67,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 2,
+      "wrongAnswers": 1,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 80,
+      "timestamp": "2024-03-22T14:20:00.000Z"
+    },
+    {
+      "id": "7",
+      "examId": "4",
+      "userId": "4",
+      "studentName": "Michael Brown",
+      "examTitle": "Angular Framework",
+      "score": 100,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 3,
+      "wrongAnswers": 0,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 90,
+      "timestamp": "2024-03-23T10:30:00.000Z"
+    },
+    {
+      "id": "8",
+      "examId": "4",
+      "userId": "2",
+      "studentName": "John Smith",
+      "examTitle": "Angular Framework",
+      "score": 33.33,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 1,
+      "wrongAnswers": 2,
+      "unansweredQuestions": 0,
+      "passed": false,
+      "passingMarks": 60,
+      "timeTaken": 110,
+      "timestamp": "2024-03-23T10:50:00.000Z"
+    },
+    {
+      "id": "9",
+      "examId": "5",
+      "userId": "5",
+      "studentName": "Sarah Davis",
+      "examTitle": "System Design",
+      "score": 100,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 3,
+      "wrongAnswers": 0,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 100,
+      "timestamp": "2024-03-24T15:40:00.000Z"
+    },
+    {
+      "id": "10",
+      "examId": "5",
+      "userId": "3",
+      "studentName": "Emma Wilson",
+      "examTitle": "System Design",
+      "score": 66.67,
+      "totalQuestions": 3,
+      "totalMarks": 15,
+      "correctAnswers": 2,
+      "wrongAnswers": 1,
+      "unansweredQuestions": 0,
+      "passed": true,
+      "passingMarks": 60,
+      "timeTaken": 115,
+      "timestamp": "2024-03-24T15:55:00.000Z"
+    }
   ]
 }
